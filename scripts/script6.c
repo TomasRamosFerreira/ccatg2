@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
         printf("\n\n");
 
         // Asks the user if they want to continue execution
-        printf("Deseja continuar a execução? (s/n) ");
+        printf("Execute again? (y/n) ");
         scanf(" %c", &continueExecution);
 
         printf("\n\n");
