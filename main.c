@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Author           => Tomás Ferreira
+ * Created At       => 30/12/2022
+ * Last Edited At   => 30/12/2022
+ * Version          => @v1.0 
+ * 
+ * Menu that executes to access the scripts
+*/
 int main(void)
 {
     // Print the menu

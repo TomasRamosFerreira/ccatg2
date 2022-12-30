@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include <gmp.h>
 
+/**
+ * Author           => Tomás Ferreira
+ * Created At       => 30/12/2022
+ * Last Edited At   => 30/12/2022
+ * Version          => @v1.0 
+ * 
+ * Script that asks the user two string numbers,
+ * and multiply them using gmp
+*/
 int main(void)
 {
     // Declare variables for the two integers and the result
