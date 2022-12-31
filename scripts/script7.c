@@ -19,25 +19,28 @@ int main(int argc, char *argv[])
 {
     // Declares the variable to store the maximum limit
     mpz_t maxLimit;
-    unsigned long maxLimitInput;
-
+    char maxLimitInput[1024];
+    unsigned long size;
+    
     // Loop until the user indicates that they want to exit
     char continueExecution;
     do
     {
+        // Initialize variable
+        mpz_init(maxLimit);
+
         // Reads the maximum limit from the user input
         printf("Insert the limit: ");
-        scanf("%lu", &maxLimitInput);
+        scanf("%s", maxLimitInput);
 
-        // Initializes the large number with the maximum limit
-        mpz_init_set_ui(maxLimit, maxLimitInput);
+        // Parses the maximum limit from the string
+        mpz_set_str(maxLimit, maxLimitInput, 10);
 
         // Calculates the prime numbers
-        unsigned long size;
         mpz_t *primes = calculatePrimes(maxLimit, &size);
 
         // Prints the prime numbers
-        printf("Prime numbers up to %Zd:\n", maxLimit);
+        gmp_printf("Prime numbers up to %Zd:\n", maxLimit);
         for (unsigned long i = 0; i < size; i++)
             gmp_printf("%Zd\n", primes[i]);
 
