@@ -18,11 +18,11 @@
 
 int main(int argc, char *argv[])
 {
-     // Declares the variable to store the maximum limit
+    // Declares the variable to store the maximum limit
     mpz_t maxLimit;
     char maxLimitInput[1024];
     unsigned long size;
-    
+
     // Loop until the user indicates that they want to exit
     char continueExecution;
     do
@@ -52,7 +52,8 @@ int main(int argc, char *argv[])
         printf("Do you want to save the prime numbers to a file (Y/N)? ");
         scanf(" %c", &save_to_file);
 
-        if (save_to_file == 'Y' || save_to_file == 'y') {
+        if (save_to_file == 'Y' || save_to_file == 'y')
+        {
             // Asks the user for the file name
             printf("Enter the file name: ");
             char file_name[1024];
@@ -60,7 +61,8 @@ int main(int argc, char *argv[])
 
             // Opens the file for writing
             FILE *file = fopen(file_name, "w+");
-            if (file == NULL) {
+            if (file == NULL)
+            {
                 printf("Error opening file!\n");
                 return 1;
             }

@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     mpz_t maxLimit;
     char maxLimitInput[1024];
     unsigned long size;
-    
+
     // Loop until the user indicates that they want to exit
     char continueExecution;
     do
