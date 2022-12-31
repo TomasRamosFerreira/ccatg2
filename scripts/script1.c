@@ -3,13 +3,12 @@
 #include <gmp.h>
 
 /**
- * Author           => Tomás Ferreira
- * Created At       => 30/12/2022
- * Last Edited At   => 30/12/2022
+ * Authors          => Miguel Berenguer, Pedro Pita and Tomás Ferreira
+ * Created At       => 04/01/2023
+ * Last Edited At   => 04/01/2023
  * Version          => @v1.0 
  * 
- * Script that asks the user two string numbers,
- * and multiply them using gmp
+ * Script that asks the user two string numbers, and multiply them using gmp
 */
 int main(void)
 {

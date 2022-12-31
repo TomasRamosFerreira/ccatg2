@@ -7,9 +7,9 @@
 mpz_t result, base;
 
 /**
- * Author           => Tomás Ferreira
- * Created At       => 30/12/2022
- * Last Edited At   => 30/12/2022
+ * Authors          => Miguel Berenguer, Pedro Pita and Tomás Ferreira
+ * Created At       => 04/01/2023
+ * Last Edited At   => 04/01/2023
  * Version          => @v1.0 
  * 
  * Script that compares the time of a pow operation,
@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
     // Loop until the user indicates that they want to exit
     do {
         // Reads the exponent from the command line
-        printf("Insira o expoente: ");
+        printf("Insert the exponet number: ");
         scanf("%d", &exponent);
         
         // Measures the execution time of the GMP solution

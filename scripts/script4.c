@@ -2,26 +2,45 @@
 #include <gmp.h>
 #include <stdlib.h>
 
+/**
+ * Authors          => Miguel Berenguer, Pedro Pita and Tomás Ferreira
+ * Created At       => 04/01/2023
+ * Last Edited At   => 04/01/2023
+ * Version          => @v1.0 
+ * 
+ * Develop a program in C language using the GMP library, which allows you to calculate the
+ * exponentiation of two integers of any dimension, and the numbers must be asked to the
+ * user, obtained as strings and processed as mpz_t. Consider the possibility of defining a
+ * enough modular arithmetic for your operations. The program should run in a loop, order
+ * the numbers relative to the base and the power and calculating the respective exponentiation in each case, until
+ * to select the exit option.
+*/
+
 int main(void)
 {
-    mpz_t base, resultado;
-    unsigned int expoente;
+    // Declare the variables
+    mpz_t base, result;
+    unsigned int exponent;
 
+    //init variables
     mpz_init(base);
-    mpz_init(resultado);
+    mpz_init(result);
 
+    //char to store the input
     char input[10000];
 
-    printf("Insira a base: ");
+    //Read the base and exponent numbers
+    printf("Insert the base number: ");
     scanf("%s", input);
+    mpz_set_str(base, input, 10);
     
-    printf("Insira o expoente: ");
-    scanf("%u", &expoente);
+    printf("Insert the exponent number: ");
+    scanf("%u", &exponent);
     
-    mpz_set_str(base, input, 10); // 10 indica que a base é a decimal
+    //calculate the exponentiation
+    mpz_pow_ui(result, base, exponent);
 
-    mpz_pow_ui(resultado, base, expoente); //calcula a exponenciação
-
-    char *resultado_str = mpz_get_str(NULL, 10, resultado);
-    printf("Resultado: %s\n", resultado_str);
+    //print the result
+    char *result_str = mpz_get_str(NULL, 10, result);
+    printf("Result: %s\n", result_str);
 }

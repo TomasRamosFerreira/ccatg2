@@ -5,10 +5,10 @@
 #include "calculatePrimes.c"
 
 /**
- * Author           => Tomás Ferreira
- * Created At       => 30/12/2022
- * Last Edited At   => 31/12/2022
- * Version          => @v3.0
+ * Authors          => Miguel Berenguer, Pedro Pita and Tomás Ferreira
+ * Created At       => 04/01/2023
+ * Last Edited At   => 04/01/2023
+ * Version          => @v1.0
  *
  * Script that gets all prime numbers up to a limit given by the user.
  * It's using the Sieve of Eratosthenes algorithm.

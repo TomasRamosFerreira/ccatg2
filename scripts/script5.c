@@ -3,39 +3,60 @@
 #include <stdlib.h>
 #include <time.h>
 
+/**
+ * Authors          => Miguel Berenguer, Pedro Pita and Tomás Ferreira
+ * Created At       => 04/01/2023
+ * Last Edited At   => 04/01/2023
+ * Version          => @v1.0 
+ * 
+ * Adapt the exercise 4 program to measure the execution time of the exponentiation function
+ * used.
+*/
+
 int main(void)
 {
-    mpz_t base, resultado;
-    unsigned int expoente;
+    // Declare the variables
+    mpz_t base, result;
+    unsigned int exponent;
     clock_t start, end;
     double elapsed_ns, elapsed_s;
 
+    //init variables
     mpz_init(base);
-    mpz_init(resultado);
+    mpz_init(result);
 
+    //char to store the input
     char input[10000];
 
-    printf("Insira a base: ");
+    //Read the base and exponent numbers
+    printf("Insert the base number: ");
     scanf("%s", input);
+    mpz_set_str(base, input, 10);
     
-    printf("Insira o expoente: ");
-    scanf("%u", &expoente);
+    printf("Insert the exponent number: ");
+    scanf("%u", &exponent);
     
-    mpz_set_str(base, input, 10); // 10 indica que a base é a decimal
-
+    //start the execution time calculation
     start = clock();
-    mpz_pow_ui(resultado, base, expoente); //calcula a exponenciação
+
+    //calculate the exponentiation
+    mpz_pow_ui(result, base, exponent);
+
+    //end the execution time calculation
     end = clock();
 
-    //Imprimir o resultado
-    char *resultado_str = mpz_get_str(NULL, 10, resultado);
-    printf("Resultado: %s\n", resultado_str);
+    //print the result
+    char *result_str = mpz_get_str(NULL, 10, result);
+    printf("Result: %s\n", result_str);
 
-    //Medir tempo de execução
-    // Converter o tempo de execução em segundos
+    //Convert the execution time from clock to nanoseconds
     elapsed_ns = (end - start) * 1000000000.0 / CLOCKS_PER_SEC;
+
+    //Convert the execution time from nanoseconds to seconds
     elapsed_s = elapsed_ns / 1000000000.0;
-    printf("O tempo de execução foi de %f nanosegundos == %f segundos \n", elapsed_ns, elapsed_s);
-    
+
+    //print execution time
+    printf("The execution time was %f nanoseconds == %f seconds \n", elapsed_ns, elapsed_s);
+
     return 0;
 }
