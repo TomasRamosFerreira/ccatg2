@@ -7,9 +7,10 @@
  * Author           => Tomás Ferreira
  * Created At       => 30/12/2022
  * Last Edited At   => 30/12/2022
- * Version          => @v2.0
+ * Version          => @v1.0
  *
- * Script that gets all prime numbers up to a limit given by the user.
+ * Script that gets all prime numbers up to a limit given by the user
+ * And asks the user if he wants to store the result into a file
  * It's using the Sieve of Eratosthenes algorithm.
  * This code was inspired by the folowing site:  https://www.geeksforgeeks.org/sieve-of-eratosthenes/
  */
