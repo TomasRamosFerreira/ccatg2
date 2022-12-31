@@ -25,11 +25,11 @@ int main(void)
 
     // Read the entry numbers
     char str1[10000], str2[10000];
-    printf("Digite o primeiro número: ");
+    printf("Insert the first number: ");
     scanf("%s", str1);
     mpz_set_str(n1, str1, 10);
 
-    printf("Digite o segundo número: ");
+    printf("Insert the second number: ");
     scanf("%s", str2);
     mpz_set_str(n2, str2, 10);
 
