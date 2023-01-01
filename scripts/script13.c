@@ -74,9 +74,13 @@ int main(void) {
           //somar os dois valores
           mpz_add(result, fac1, fac2);
 
+          fprintf(file, "Result=");
           mpz_out_str(file, 10, result);
+          fprintf(file, " J=");
+          mpz_out_str(file, 10, j);
+          fprintf(file, " I=");
+          mpz_out_str(file, 10, i);
           fprintf(file, "\n");
-          
           mpz_set_ui(j, 0);
         }
       }
