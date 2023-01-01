@@ -7,14 +7,10 @@
  * Last Edited At   => 04/01/2023
  * Version          => @v1.0 
  * 
- * Develop a program in C language using the GMP library, which allows you to obtain a
- * listing in a text file, the factorization of all Prime numbers less than one
- * certain maximum limit, and the maximum limit must be requested from the user, obtained as a string and
- * rendered as mpz_t. The program should run in a cycle, asking for the maximum limit and the name of the
- * text file, calculating the Prime numbers smaller than that limit, calculating the combinations
- * possible combinations of all Prime numbers two by two, calculating the factorization of all combinations
- * and writing in the text file a result of a factorization per line, until selected
- * the exit option.
+ * Change the program for exercise 12 so that the text file inspired in each line the factorization
+ * of two prime numbers and the prime numbers that gave rise to it. Each line must therefore
+ * contain three numbers, the first being the result of the factorization and the second and third the numbers
+ * Primes involved in the respective factorization.
 */
 
 int main(void) {
