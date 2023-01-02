@@ -76,7 +76,7 @@ int main(void) {
 
           mpz_out_str(file, 10, result);
           fprintf(file, "\n");
-          
+
           mpz_set_ui(j, 0);
         }
       }
@@ -93,6 +93,7 @@ int main(void) {
     printf("Do yout want to continue (S/N)? ");
     scanf("%s", input);
     if (input[0] == 'N' || input[0] == 'n') {
+      printf("Bye");
       break;
     }
   }

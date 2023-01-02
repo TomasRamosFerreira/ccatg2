@@ -28,35 +28,43 @@ int main(void)
     //char to store the input
     char input[10000];
 
-    //Read the base and exponent numbers
-    printf("Insert the base number: ");
-    scanf("%s", input);
-    mpz_set_str(base, input, 10);
-    
-    printf("Insert the exponent number: ");
-    scanf("%u", &exponent);
-    
-    //start the execution time calculation
-    start = clock();
+    //Execute the main cicle
+    while (1) {
+        //Read the base and exponent numbers
+        printf("Insert the base number: ");
+        scanf("%s", input);
+        mpz_set_str(base, input, 10);
+        
+        printf("Insert the exponent number: ");
+        scanf("%u", &exponent);
+        
+        //start the execution time calculation
+        start = clock();
 
-    //calculate the exponentiation
-    mpz_pow_ui(result, base, exponent);
+        //calculate the exponentiation
+        mpz_pow_ui(result, base, exponent);
 
-    //end the execution time calculation
-    end = clock();
+        //end the execution time calculation
+        end = clock();
 
-    //print the result
-    char *result_str = mpz_get_str(NULL, 10, result);
-    printf("Result: %s\n", result_str);
+        //print the result
+        char *result_str = mpz_get_str(NULL, 10, result);
+        printf("Result: %s\n", result_str);
 
-    //Convert the execution time from clock to nanoseconds
-    elapsed_ns = (end - start) * 1000000000.0 / CLOCKS_PER_SEC;
+        //Convert the execution time from clock to nanoseconds
+        elapsed_ns = (end - start) * 1000000000.0 / CLOCKS_PER_SEC;
 
-    //Convert the execution time from nanoseconds to seconds
-    elapsed_s = elapsed_ns / 1000000000.0;
+        //Convert the execution time from nanoseconds to seconds
+        elapsed_s = elapsed_ns / 1000000000.0;
 
-    //print execution time
-    printf("The execution time was %f nanoseconds == %f seconds \n", elapsed_ns, elapsed_s);
+        //print execution time
+        printf("The execution time was %f nanoseconds == %f seconds \n", elapsed_ns, elapsed_s);
 
-    return 0;
+        printf("Do yout want to continue (S/N)? ");
+        scanf("%s", input);
+        if (input[0] == 'N' || input[0] == 'n') {
+            printf("Bye");
+            break;
+        }
+    }
 }

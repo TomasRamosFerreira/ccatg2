@@ -29,18 +29,30 @@ int main(void)
     //char to store the input
     char input[10000];
 
-    //Read the base and exponent numbers
-    printf("Insert the base number: ");
-    scanf("%s", input);
-    mpz_set_str(base, input, 10);
-    
-    printf("Insert the exponent number: ");
-    scanf("%u", &exponent);
-    
-    //calculate the exponentiation
-    mpz_pow_ui(result, base, exponent);
+    //Execute the main cicle
+    while (1) {
+        //Read the base and exponent numbers
+        printf("Insert the base number: ");
+        scanf("%s", input);
+        mpz_set_str(base, input, 10);
+        
+        printf("Insert the exponent number: ");
+        scanf("%u", &exponent);
+        
+        //calculate the exponentiation
+        mpz_pow_ui(result, base, exponent);
 
-    //print the result
-    char *result_str = mpz_get_str(NULL, 10, result);
-    printf("Result: %s\n", result_str);
+        //print the result
+        char *result_str = mpz_get_str(NULL, 10, result);
+        printf("Result: %s\n", result_str);
+
+        // Ask the user if they want to continue or exit the program
+        printf("Do yout want to continue (S/N)? ");
+        scanf("%s", input);
+
+        if (input[0] == 'N' || input[0] == 'n') {
+            printf("Bye");
+            break;
+        }
+    }
 }
