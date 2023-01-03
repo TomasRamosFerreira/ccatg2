@@ -97,8 +97,9 @@ int main(void) {
   mpz_init(d);
   mpz_invert(d, e, phi);
   end = clock();
-  calculateTime(end, start, "Time calculating 'd' as the multiplicative inverse of 'e' modulo 'phi': \n");
+  calculateTime(end, start, "Time calculating 'd' as the multiplicative inverse of 'e' modulo 'phi':");
 
+  printf("\n");
   // Display the value of n, e, and d
   gmp_printf("n = %Zd\n", n);
   gmp_printf("e = %Zd\n", e);
